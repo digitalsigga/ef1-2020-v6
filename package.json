@@ -4,8 +4,10 @@
   "description": "## Lýsing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "browser-sync start --server && node-sass --source-map-embed styles.scss styles.css && node-sass --source-map-embed --watch *.scss --recursive styles.css && concurrently npm:sass-watch npm:browser-sync",
+    "browser-sync": "browser-sync start --server",
+    "sass": "node-sass --source-map-embed styles.scss styles.css",
+    "sass-watch": "node-sass --source-map-embed --watch *.scss --recursive styles.css",
+    "dev": "concurrently npm:sass-watch npm:browser-sync",
     "lint": "stylelint styles.scss ./**/*.scss"
   },
   "repository": {
